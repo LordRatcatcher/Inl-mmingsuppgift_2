@@ -14,7 +14,7 @@ namespace Inlamning_2_ra_kod
         {
             namn = N; adress = A; telefon = T; email = E;
         }
-       public static void loadList()
+       public static void LoadList()
         {
             List<Person> Dict = new List<Person>();
             Console.Write("Laddar adresslistan ... ");
@@ -40,7 +40,7 @@ namespace Inlamning_2_ra_kod
     {
         static void Main(string[] args)
         {                        
-            Person.loadList();
+            Person.LoadList();
             List<Person> Dict = new List<Person>();
             string command;
             do
@@ -48,27 +48,20 @@ namespace Inlamning_2_ra_kod
                 Console.Write("> ");
                 command = Console.ReadLine();
                 if (command == "sluta")
-                {
+                {                    
                     Console.WriteLine("Hej då!");
                 }
                 else if (command == "ny")
                 {
-                    Console.WriteLine("Lägger till ny person");
-                    Console.Write("  1. ange namn:    ");
-                    string name = Console.ReadLine();
-                    Console.Write("  2. ange adress:  ");
-                    string adress = Console.ReadLine();
-                    Console.Write("  3. ange telefon: ");
-                    string telefon = Console.ReadLine();
-                    Console.Write("  4. ange email:   ");
-                    string email = Console.ReadLine();
+                    Console.WriteLine("Lägger till ny person"); Console.Write("  1. ange namn:    "); string name = Console.ReadLine();
+                    Console.Write("  2. ange adress:  "); string adress = Console.ReadLine();
+                    Console.Write("  3. ange telefon: "); string telefon = Console.ReadLine();
+                    Console.Write("  4. ange email:   "); string email = Console.ReadLine();
                     Dict.Add(new Person(name, adress, telefon, email));
                 }
                 else if (command == "ta bort")
                 {
-                    Console.Write("Vem vill du ta bort (ange namn): ");
-                    string villTaBort = Console.ReadLine();
-                    int found = -1;
+                    Console.Write("Vem vill du ta bort (ange namn): "); string villTaBort = Console.ReadLine(); int found = -1;
                     for (int i = 0; i < Dict.Count(); i++)
                     {
                         if (Dict[i].namn == villTaBort) found = i;
@@ -92,8 +85,7 @@ namespace Inlamning_2_ra_kod
                 }
                 else if (command == "ändra")
                 {
-                    Console.Write("Vem vill du ändra (ange namn): ");
-                    string villÄndra = Console.ReadLine();
+                    Console.Write("Vem vill du ändra (ange namn): "); string villÄndra = Console.ReadLine();
                     int found = -1;
                     for (int i = 0; i < Dict.Count(); i++)
                     {
@@ -105,10 +97,8 @@ namespace Inlamning_2_ra_kod
                     }
                     else
                     {
-                        Console.Write("Vad vill du ändra (namn, adress, telefon eller email): ");
-                        string fältAttÄndra = Console.ReadLine();
-                        Console.Write("Vad vill du ändra {0} på {1} till: ", fältAttÄndra, villÄndra);
-                        string nyttVärde = Console.ReadLine();
+                        Console.Write("Vad vill du ändra (namn, adress, telefon eller email): "); string fältAttÄndra = Console.ReadLine();
+                        Console.Write("Vad vill du ändra {0} på {1} till: ", fältAttÄndra, villÄndra); string nyttVärde = Console.ReadLine();
                         switch (fältAttÄndra)
                         {
                             case "namn": Dict[found].namn = nyttVärde; break;
